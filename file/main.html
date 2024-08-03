@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Library</title>
+    <style>
+        /* CSS样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #222; /* 设置半透明的背景颜色 */
+        }
+        .title h1 {
+            color: #FFFFFF;
+        }
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+        .movie {
+            width: {{replace-width-replace}};
+            margin: 5px;
+            border: 1px solid #555;
+            background-color: #333;
+            padding: 0px;
+            box-sizing: border-box;
+            border-radius: 10px; /* 圆角 */
+        }
+        .movie img {
+            width: 100%;
+            height: auto;
+            margin: 0px;
+            margin-bottom: -15px;
+            border-radius: 10px; /* 圆角 */
+        }
+        .movie h2 {
+            margin-bottom: -10px;
+            color: #DDD;
+        }
+        .movie h5 {
+            margin-bottom: -15px;
+            color: #AAA;
+        }
+        .movie p {
+            margin-bottom: -13px;
+            color: #CCC;
+        }
+        /* 导航栏样式 */
+        .navbar {
+            display: flex;
+            align-items: center; /* 使导航栏内的内容垂直居中 */
+            background-color: #2b2b2b;
+            overflow: hidden;
+            border-radius: 15px; /* 所有角都是15px的圆角 */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #FFF;
+            text-align: center;
+            padding: 5px 10px;
+            text-decoration: none;
+            font-size: 30px; /* 增加按钮文字大小 */
+            margin: 0 10px; /* 设置左右间隔为5像素 */
+        }
+        .navbar img {
+            float: left;
+            display: block;
+            padding: 8px;
+        }
+        .navbar img:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <a href="/">
+            <img src="/image/display/session-buttons" alt="Logo" style="width:70px;height:50px;">
+        </a>
+        <a href="/">主页</a>
+    </div>
+
+    <!-- 影视库 -->
+    <div class="title">
+        <h1>影视库</h1>
+    </div>
+
+    <div class="movie-container">
+        {{replace-movies-replace}}
+    </div>
+
+</body>
+</html>

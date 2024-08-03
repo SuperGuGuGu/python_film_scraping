@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Library</title>
+    <style>
+        /* CSS样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-image: url('{{replace-background_url-replace}}'); /* 设置背景图片 */
+            background-repeat: no-repeat; /* 不重复图片 */
+            background-attachment: fixed; /* 固定背景 */
+            background-position: top center; /* 居中背景图片 */
+            background-size: 100% 25%; /* 背景图片拉伸到元素的宽度和高度 */
+            background-color: #181818; /* 设置半透明的背景颜色 */
+        }
+        .movie {
+            width: 12%;
+            margin: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .movie img {
+            width: 100%;
+            height: auto;
+        }
+        .movie-detail {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #222;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .movie-detail h1 {
+            color: #DDD;
+            border-bottom: 1px solid #555;
+            padding-bottom: 20px;
+            font-size: 40px;
+            margin-top: 0px; /* 设置图片项之间的间隔 */
+        }
+        .movie-detail p {
+            color: #AAA;
+            line-height: 1.6;
+            margin: 5px; /* 设置间隔 */
+            font-size: 25px;
+        }
+        .movie-poster {
+            width: 200px;
+            float: left;
+            margin-right: 20px;
+        }
+        .movie-poster img {
+            width: 100%;
+            height: auto;
+        }
+        .movie-info {
+            width: 65%;
+            float: left;
+        }
+        .movie-session {
+            display: flex;
+            flex-wrap: wrap;
+            margin-down: 35px; /* 设置图片和文字的间隔 */
+        }
+        .session-item {
+            position: relative; /* 为绝对定位的文字提供参照物 */
+            display: inline-block; /* 使图片项横向排列 */
+            width: 160px; /* 设置图片项的宽度，根据需要调整 */
+            margin-right: 2%; /* 设置图片项之间的间隔 */
+        }
+        .session-item img {
+            width: 100%; /* 图片宽度占满其容器 */
+            height: auto; /* 高度自适应，保持图片比例 */
+            display: block; /* 防止图片下方出现间隙 */
+            border: 1px solid #ddd;
+        }
+        .session-title {
+            position: absolute; /* 绝对定位文字 */
+            top: 50%; /* 垂直居中 */
+            left: 50%; /* 水平居中 */
+            transform: translate(-50%, -50%); /* 偏移以实现居中 */
+            font-size: 25px;
+            color: #EEE;
+            text-align: center; /* 标题居中显示 */
+            width: 100%; /* 使标题宽度与图片宽度相同 */
+        }
+        /* 导航栏样式 */
+        .navbar {
+            display: flex;
+            align-items: center; /* 使导航栏内的内容垂直居中 */
+            background-color: #2b2b2b;
+            overflow: hidden;
+            border-radius: 15px; /* 所有角都是10px的圆角 */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #FFF;
+            text-align: center;
+            padding: 5px 10px;
+            text-decoration: none;
+            font-size: 30px; /* 增加按钮文字大小 */
+            margin: 0 10px; /* 设置左右间隔为5像素 */
+        }
+        .navbar img {
+            float: left;
+            display: block;
+            padding: 8px;
+        }
+        .navbar img:hover {
+            opacity: 0.8;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<div class="navbar">
+    <a href="/">
+        <img src="/image/display/session-buttons" alt="Logo" style="width:70px;height:50px;">
+    </a>
+    <a href="/">主页</a>
+</div>
+
+<!-- 电影详情 -->
+<div class="movie-detail">
+    {{replace-movie_html-replace}}
+</div>
+
+<!-- 电影分集 -->
+<div class="movie-session">
+    {{replace-movie_list_html-replace}}
+</div>
+</body>
+</html>

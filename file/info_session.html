@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Library</title>
+    <style>
+        /* CSS样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #222; /* 设置半透明的背景颜色 */
+        }
+        .title h1 {
+            color: #FFFFFF;
+        }
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+        .movie {
+            width: {{replace-width-replace}};
+            margin: 5px;
+            border: 1px solid #ddd;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .movie img {
+            width: 100%;
+            height: auto;
+            margin: 0px;
+            margin-bottom: -15px;
+        }
+        .movie h2 {
+            margin-left: 5px;
+            margin-bottom: 10px;
+            color: #EEE;
+        }
+        /* 导航栏样式 */
+        .navbar {
+            display: flex;
+            align-items: center; /* 使导航栏内的内容垂直居中 */
+            background-color: #2b2b2b;
+            overflow: hidden;
+            border-radius: 10px; /* 所有角都是15px的圆角 */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #FFF;
+            text-align: center;
+            padding: 5px 10px;
+            text-decoration: none;
+            font-size: 30px; /* 增加按钮文字大小 */
+            margin: 0 10px; /* 设置左右间隔为5像素 */
+        }
+        .navbar img {
+            float: left;
+            display: block;
+            padding: 8px;
+        }
+        .navbar img:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <div class="navbar">
+        {{replace-navbar-replace}}
+    </div>
+
+    <!-- 影视库 -->
+    <div class="title">
+        <h1>{{replace-movie_name-replace}}</h1>
+    </div>
+
+    <!-- 电影分集 -->
+    <div class="movie-container">
+        {{replace-movie_list_html-replace}}
+    </div>
+</body>
+</html>
