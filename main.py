@@ -291,11 +291,11 @@ async def movie_library(type_: str, name: str):
         elif os.path.exists(f"{library_path}{name}/background.webp"):
             return FileResponse(f"{library_path}{name}/background.webp")
 
-        if os.path.exists(f"{library_path}{name}/poster.jpg"):
-            image_path = f"{library_path}{name}/poster.jpg"
-        elif os.path.exists(f"{library_path}{name}/poster-810.jpg"):
-            image_path = f"{library_path}{name}/poster-810.jpg"
-        else:
+        image_path = None
+        for n in ["poster.jpg", "poster.png", "poster.webp", "post.jpg", "post.png", "post.webp"]:
+            if os.path.exists(f"{library_path}{name}/{n}"):
+                image_path = f"{library_path}{name}/{n}"
+        if image_path is None:
             return FileResponse(f"{app_path}none_background.jpg")
 
         background_path = f"{library_path}{name}/background.jpg"
